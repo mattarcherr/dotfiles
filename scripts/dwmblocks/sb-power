@@ -1,0 +1,6 @@
+#!/bin/sh
+echo " "
+
+case $BUTTON in
+        1) ~/scripts/dmenu/shutdown
+esac

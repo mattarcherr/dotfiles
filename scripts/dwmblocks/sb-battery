@@ -1,0 +1,20 @@
+#!/bin/sh
+
+capacity=$(cat "/sys/class/power_supply/BAT0/capacity")
+status=$(cat "/sys/class/power_supply/BAT0/status")
+
+
+
+if [[ "$status" = "Not charging" || "$status" = "Charging" ]]; then
+    echo -e "  $capacity%"
+else
+    if [ $capacity -gt 75 ]; then
+        echo -e "  $capacity%"
+    elif [ $capacity -gt 50 ]; then
+        echo -e "  $capacity%"
+    elif [ $capacity -gt 25 ]; then
+        echo -e "  $capacity%"
+    else
+        echo -e "  $capacity%"
+    fi
+fi

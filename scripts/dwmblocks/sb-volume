@@ -1,0 +1,23 @@
+#!/bin/sh
+
+muted=$(amixer get Master | tail -2 | grep -c '\[on\]')
+case $muted in
+        0) echo "ﱝ" && exit 1;
+esac
+
+volume=$(awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master))
+#if [[ -n "$volume" ]]; then
+#        volume=$(awk -F"[][]" '/Mono:/ { print $2 }' <(amixer sget Master))
+#fi
+
+volume=${volume::-1}
+
+case $volume in
+        ([0-4][0-9]|50) echo "奔 $volume%" ;;
+        ([5-9][0-9]|100) echo "墳 $volume%" ;;
+        0) echo "ﱝ";;
+esac
+
+case $BUTTON in
+    1) st -e alsamixer ;;
+esac

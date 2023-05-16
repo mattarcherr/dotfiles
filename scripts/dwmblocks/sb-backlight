@@ -1,0 +1,5 @@
+#!/bin/sh
+bri=`xbacklight -get`
+
+rounded=$(printf %.1f $(echo "$bri" | bc -l))
+echo -e "  $rounded%"

@@ -1,0 +1,27 @@
+#!/bin/sh
+uuids=( $(bluetoothctl devices | cut -f2 -d' ') )
+devices=`bluetoothctl devices | cut -b 26-`
+
+readarray -t device_array <<<"$devices"
+
+connected=0
+i=0
+
+for uuid in "${uuids[@]}"; do
+        info=$(bluetoothctl info $uuid)
+        if echo "$info" | grep -q "Connected: yes"; then
+                connected=1
+                #echo ${device_array[i]}
+                connected_device=${device_array[i]}
+        fi
+        ((i=i+1))
+done
+
+case $connected in
+        0) echo "󰂲" ;;
+        *) echo "󰂱  $connected_device" ;;
+esac
+
+case $BUTTON in
+        1) blueman-manager ;;
+esac
