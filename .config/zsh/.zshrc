@@ -29,7 +29,7 @@ alias vim="nvim"
 alias p="sudo pacman"
 alias SS="sudo systemctl"
 alias ls="ls -ogh --color"
-alias r="lf"
+alias r="lfcd"
 alias spyder="conda run spyder"
 alias gc="git clone --recursive"
 alias shut="sudo shutdown now"
@@ -37,6 +37,23 @@ alias xbl="xbacklight"
 alias odm="onedrive --monitor"
 alias ods="onedrive --synchronize"
 alias hss="hugo server --noHTTPCache --disableFastRender --bind 192.168.6.220 --baseURL http://192.168.6.220 --port 1313"
+
+# ------ commands -------
+
+lfcd () {
+    tmp="$(mktemp)"
+    # `command` is needed in case `lfcd` is aliased to `lf`
+    command lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}
 
 # ----- plugins -----
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
