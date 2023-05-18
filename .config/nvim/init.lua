@@ -64,6 +64,9 @@ require('packer').startup(function()
 -- colour scheme
   use 'AlexvZyl/nordic.nvim'
 
+-- NVIM Project
+  use 'ahmedkhalf/project.nvim'
+
 -- tabline
   use { 'akinsho/bufferline.nvim', tag = "v3.*", 
   requires = 'nvim-tree/nvim-web-devicons'}
