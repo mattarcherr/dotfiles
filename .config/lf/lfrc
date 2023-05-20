@@ -51,6 +51,7 @@ map pp paste                 # paste from clipboard
 map gh cd ~
 map gd cd ~/Downloads
 map gs cd ~/.config/suckless
+map gc cd ~/Documents/dotfiles
 
 # execute current file (must be executable)
 map x $$f
