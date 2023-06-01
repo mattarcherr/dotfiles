@@ -13,9 +13,9 @@ volume=$(awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master))
 volume=${volume::-1}
 
 case $volume in
-        ([0-4][0-9]|50) echo "奔 $volume%" ;;
-        ([5-9][0-9]|100) echo "墳 $volume%" ;;
-        0) echo "ﱝ";;
+        ([0-4][0-9]|50) echo " $volume%" ;;
+        ([5-9][0-9]|100) echo " $volume%" ;;
+        0) echo "󰝟";;
 esac
 
 case $BUTTON in
