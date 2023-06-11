@@ -2,7 +2,7 @@
 
 choices="Wallpaper\nScreenshot"
 
-chosen=$(echo -e "$choices" | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l 20 -p "TOOLS: ")
+chosen=$(echo -e "$choices" | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l 20 -p " ")
 
 case "$chosen" in
         Screenshot) 

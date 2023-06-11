@@ -2,7 +2,7 @@
 
 choices="Shutdown\nReboot\nSign Out"
 
-chosen=$(printf "$choices" | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l "20")
+chosen=$(printf "$choices" | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l "20" -p " ")
 
 case "$chosen" in
         Shutdown) sudo shutdown now ;;
