@@ -8,5 +8,5 @@ case "$chosen" in
         Screenshot) 
                 scrot '/home/matt/Pictures/screenshots/%Y-%m-%d.png' 
                 ;;
-        Wallpaper) ~/scripts/wallpaper.sh
+        Wallpaper) ~/scripts/dmenu/wallpaper
 esac
