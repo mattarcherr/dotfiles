@@ -164,7 +164,8 @@ static const Key keys[] = {
         { MODKEY|ShiftMask,             XK_l,      setcfact,       {.f = -0.25} },
         { MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
-        // GAPS
+
+        // ############ GAPS ############
 	{ MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
 	{ MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } },
@@ -184,10 +185,8 @@ static const Key keys[] = {
 
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
-        // LAYOUTS
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+
+        // ############ LAYOUTS #############
 	{ MODKEY|ShiftMask,		XK_comma,  cyclelayout,    {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, cyclelayout,    {.i = +1 } },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
@@ -200,10 +199,12 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 
-        // COMMANDS
-	/* { MODKEY|ShiftMask,             XK_q,      exitdwm,       {0} }, */
+        // ############ COMMANDS ############
 	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("~/scripts/dmenu/shutdown") }, // quit menu
 	{ MODKEY,             		XK_t,      spawn,          SHCMD("~/scripts/dmenu/tools/tools.sh") },    // tools menu
+         
+	{ MODKEY,             		XK_f,      spawn,          SHCMD("firefox") },    // tools menu
+	{ MODKEY,             		XK_r,      spawn,          SHCMD("st -e lf") },    // tools menu
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)

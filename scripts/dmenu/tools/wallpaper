@@ -1,3 +1,5 @@
+#!/bin/sh
+
 files=( "/home/matt/Pictures/wallpaper"/* )
 
 choices="RANDOM\n"
@@ -9,7 +11,7 @@ do
    choices+="$tmp\n" # then add new line to each element for the dmenu interface 
 done
 
-chosen=$(echo -e "${choices[@]::-2}" | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l "20")
+chosen=$(echo -e "${choices[@]::-2}" | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l "20" -p "󰸉 ")
 
 case "$chosen" in
         RANDOM) # random wallpaper

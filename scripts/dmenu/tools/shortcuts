@@ -1,0 +1,14 @@
+#!/bin/sh
+
+
+choices="Terminal                 (super+shift+enter)\nlf\nFirefox\n"
+
+chosen=$(echo -e "${choices[@]::-2}" | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l "20" -p " ")
+
+chosen=${chosen%% *} # ignore keybind ( only take first word )
+
+case "$chosen" in
+        Terminal) st ;;
+        lf) st -e lf ;;
+        Firefox) firefox
+esac
