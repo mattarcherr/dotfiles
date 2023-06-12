@@ -1,7 +1,9 @@
 #!/bin/sh
 
 
-choices="Terminal                 (super+shift+enter)\nlf\nFirefox\n"
+choices="Terminal                 (super+shift+enter)
+lf                                 (super+r)
+Firefox                            (super+f)\n"
 
 chosen=$(echo -e "${choices[@]::-2}" | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l "20" -p " ")
 
