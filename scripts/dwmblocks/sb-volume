@@ -14,7 +14,7 @@ volume=${volume::-1}
 
 case $volume in
         ([0-4][0-9]|50) echo " $volume%" ;;
-        ([5-9][0-9]|100) echo " $volume%" ;;
+        ([5-9][0-9]|100) echo "  $volume%" ;;
         0) echo "󰝟";;
 esac
 
