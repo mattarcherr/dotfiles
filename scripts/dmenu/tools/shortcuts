@@ -11,6 +11,6 @@ chosen=${chosen%% *} # ignore keybind ( only take first word )
 
 case "$chosen" in
         Terminal) st ;;
-        lf) st -e lf ;;
+        lf) st -e zsh -ic "lfcd; zsh" ;;
         Firefox) firefox
 esac

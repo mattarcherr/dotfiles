@@ -204,7 +204,7 @@ static const Key keys[] = {
 	{ MODKEY,             		XK_t,      spawn,          SHCMD("~/scripts/dmenu/tools/tools.sh") },    // tools menu
          
 	{ MODKEY,             		XK_f,      spawn,          SHCMD("firefox") },    // tools menu
-	{ MODKEY,             		XK_r,      spawn,          SHCMD("st -e lf") },    // tools menu
+	{ MODKEY,             		XK_r,      spawn,          SHCMD("st -e zsh -ci 'lfcd; zsh'") },    // tools menu
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
