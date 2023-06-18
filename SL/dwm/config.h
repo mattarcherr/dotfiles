@@ -206,6 +206,9 @@ static const Key keys[] = {
 	{ MODKEY,             		XK_f,      spawn,          SHCMD("firefox") },    // tools menu
 	{ MODKEY,             		XK_r,      spawn,          SHCMD("st -e zsh -ci 'lfcd; zsh'") },    // tools menu
 
+        { 0,       XF86XK_AudioLowerVolume,   spawn,          SHCMD("amixer -q sset Master 5%-") },
+        { 0,       XF86XK_AudioRaiseVolume,   spawn,          SHCMD("amixer -q sset Master 5%+") },
+
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
