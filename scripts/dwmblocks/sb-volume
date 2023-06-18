@@ -2,7 +2,7 @@
 
 muted=$(amixer get Master | tail -2 | grep -c '\[on\]')
 case $muted in
-        0) echo "ﱝ" && exit 1;
+        0) echo "󰝟" && exit 1;
 esac
 
 volume=$(awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master))
