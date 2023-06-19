@@ -208,6 +208,9 @@ static const Key keys[] = {
 
         { 0,       XF86XK_AudioLowerVolume,   spawn,          SHCMD("amixer -q sset Master 5%-") },
         { 0,       XF86XK_AudioRaiseVolume,   spawn,          SHCMD("amixer -q sset Master 5%+") },
+        { 0,       XF86XK_AudioMute,          spawn,          SHCMD("amixer set Master toggle") },
+        { 0,       XF86XK_KbdBrightnessDown,  spawn,          SHCMD("xbacklight -dec 5") },
+        { 0,       XF86XK_KbdBrightnessUp,    spawn,          SHCMD("xbacklight -inc 5") },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
