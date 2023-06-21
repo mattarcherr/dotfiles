@@ -69,6 +69,8 @@ map O $mimeopen --ask $f
 cmd open &{{
     case $(file --mime-type -Lb $f) in
         text/*) lf -remote "send $id \$$EDITOR \$fx";;
+        image/*) sxiv $fx | tr '\n' ' ';;
+        application/pdf ) setsid -f zathura $fx >/dev/null 2>&1 ;;
         *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}
