@@ -2,7 +2,7 @@
 
 files=( "/home/matt/Pictures/wallpaper"/* )
 
-choices="RANDOM\n"
+choices="RANDOM\nBROWSE\n"
 
 for i in "${files[@]}"
 do
@@ -19,6 +19,8 @@ case "$chosen" in
                   st -e xwallpaper --zoom /home/matt/Pictures/wallpaper/$file
           done 
           ;;
+        BROWSE) # browse wallpapers in sxiv
+          sxiv -t /home/matt/Pictures/wallpaper/* ;;
         *) # if a specific wallpaper is chosen
           st -e xwallpaper --zoom /home/matt/Pictures/wallpaper/$chosen 
           ;;
