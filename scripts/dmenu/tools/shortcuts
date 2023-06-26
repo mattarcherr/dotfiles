@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 
 choices="Terminal                 (super+shift+enter)

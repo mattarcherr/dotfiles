@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 choices="Shutdown\nReboot\nSign Out"
 
