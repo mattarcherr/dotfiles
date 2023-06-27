@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 dte="$(date +"%a %d/%m - %H:%M")"
 echo -e "$dte"

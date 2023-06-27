@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 uuids=( $(bluetoothctl devices | cut -f2 -d' ') )
 devices=`bluetoothctl devices | cut -b 26-`
 

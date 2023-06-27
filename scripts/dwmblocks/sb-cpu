@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 cpu=`top -bn1 | 
 	grep "Cpu(s)" | 

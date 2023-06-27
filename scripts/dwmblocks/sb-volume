@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 muted=$(amixer get Master | tail -2 | grep -c '\[on\]')
 case $muted in
