@@ -6,7 +6,7 @@ static int centered = 1;                    /* -c option; centers dmenu on scree
 static int min_width = 500;                    /* minimum width when centered */
 /* -fn option overrides fonts[0]; default X11 font or font set */
 static const char *fonts[] = {
-    "JetBrainsMono:size=8",
+    "JetBrainsMono:size=12",
     "NotoColorEmoji:pixelsize=8:antialias=true:autohint=true"};
 static const unsigned int bgalpha = 0xd0;
 static const unsigned int fgalpha = OPAQUE;
@@ -15,7 +15,7 @@ static const char *prompt =
 static const char *colors[SchemeLast][2] = {
     /*     fg         bg       */
     [SchemeNorm] = {"#bbbbbb", "#222222"},
-    [SchemeSel] = {"#eeeeee", "#005577"},
+    [SchemeSel] = {"#eeeeee", "#4A5771"},
     [SchemeOut] = {"#000000", "#00ffff"},
 };
 static const unsigned int alphas[SchemeLast][2] = {
