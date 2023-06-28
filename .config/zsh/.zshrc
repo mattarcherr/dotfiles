@@ -10,6 +10,9 @@ HISTSIZE=99999999
 SAVEHIST=99999999
 HISTFILE="${XDG_CASHE_HOME:-$HOME/.cache}/zsh/history"
 
+# default libvirt uri path
+export LIBVIRT_DEFAULT_URI='qemu:///system'
+
 # ----- options -----
 autoload -U compinit
 zstyle ':completion:*' menu select
@@ -17,7 +20,8 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
 
-#vim keys in menu
+
+# vim keys in menu
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char

@@ -49,7 +49,6 @@ keymap("n", "<C-n>",    ":tabnew<cr>",                 	nrm) -- Crtl-n opens new
 -- telescope binds
 keymap("n", "<S-F>",    ":cd /home/matt | :Telescope find_files<cr>", nrm) -- Shift-F to open telescope
 
-
 -- window keybinds
 keymap("n", "WN",       ":belowright new<cr>",          nrm) -- WN new window
 keymap("n", "WQ",       ":quit<cr>",                   	nrm) -- WQ quit window
