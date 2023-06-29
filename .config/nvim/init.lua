@@ -11,11 +11,12 @@ vim.o.relativenumber = true -- relative line numbers
 vim.bo.expandtab   = true
 vim.bo.shiftwidth  = 0
 vim.bo.softtabstop = 2
+
 -- file specific tab settings
 vim.cmd[[autocmd FileType .hs setlocal shiftwidth=2]]
 
 -- colourscheme
-require 'nordic' .setup { theme = 'onedark', }
+require 'nordic' .setup { theme = 'nordic', }
 vim.cmd.colorscheme 'nordic'
 
 -- set termguicolors to enable highlight groups
@@ -24,11 +25,64 @@ vim.opt.termguicolors = true
 -- explorer setup
 require("nvim-tree").setup()
 
+
 -- tabline setup
-require("bufferline").setup{}
+require("barbar").setup{}
 
 -- statusline setup
-require("lualine").setup()
+
+local function folder_and_file()
+    local current_buffer = vim.api.nvim_get_current_buf()
+    local current_file = vim.api.nvim_buf_get_name(current_buffer)
+    local file = vim.fn.fnamemodify(current_file, ':t')
+    local parent = vim.fn.fnamemodify(current_file, ':h:t')
+    if parent == '.' then return '' end
+    return parent .. '/' .. file
+end
+
+local c = require 'nordic.colors'
+
+require("lualine").setup {
+  sections = {
+    lualine_a = {
+      {
+        'mode',
+        icon = { '' },
+        separator = { right = ' ', left = '' },
+      },
+    },
+    lualine_b = {},
+    lualine_c = {
+      {
+        folder_and_file,
+        color = { fg = c.gray3 },
+        icon = { ' ', color = { fg = c.gray4 } },
+        separator = '',
+        padding = 0, 
+      },
+    },
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {
+      {
+        'location',
+        icon = { '', align = 'left', color = { fg = c.black } },
+      },
+      {
+        'progress',
+        icon = { '', align = 'left', color = { fg = c.black } },
+        separator = { right = '', left = '' },
+      },
+    },
+  }, -- end of sections
+  options = {
+    globalstatus = true,
+    -- icons_enabled = true,
+    theme = 'nordic',
+    section_separators = { left = ' ', right = ' ' },
+    component_separators = { left = '', right = '' },
+  },
+}
 
 
 -- **************** Bindings ***************
@@ -67,7 +121,7 @@ require('packer').startup(function()
   use 'ahmedkhalf/project.nvim'
 
 -- tabline
-  use { 'akinsho/bufferline.nvim', tag = "v3.*", 
+  use { 'romgrk/barbar.nvim',
   requires = 'nvim-tree/nvim-web-devicons'}
 
 -- statusline
