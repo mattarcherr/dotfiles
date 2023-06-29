@@ -1,3 +1,25 @@
+<<<<<<< HEAD
 #!/bin/bash
 
 man -k . | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l 12 -p " " | awk '{print $1}' | xargs -r man -Tpdf | zathura -
+=======
+#!/bin/sh
+
+man -k . | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l 20 -p " " | awk '{print $1}' | xargs -r man -Tpdf | zathura -
+#man -k . | dmenu -l 20 -p " " | awk '{print $1}' | xargs -r man -Tpdf | zathura -
+
+
+#choices="Terminal                 (super+shift+enter)
+#lf                                 (super+r)
+#Firefox                            (super+f)\n"
+#
+#chosen=$(echo -e "${choices[@]::-2}" | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l "20" -p " ")
+#
+#chosen=${chosen%% *} # ignore keybind ( only take first word )
+#
+#case "$chosen" in
+#        Terminal) st ;;
+#        lf) st -e zsh -ic "lfcd; zsh" ;;
+#        Firefox) firefox
+#esac
+>>>>>>> c6e9cd066add81366f6df1c966d3960f8b0ea281
