@@ -9,6 +9,7 @@ PROMPT='[%F{blue}%n@%m%f %B%~%b]$ '
 HISTSIZE=99999999
 SAVEHIST=99999999
 HISTFILE="${XDG_CASHE_HOME:-$HOME/.cache}/zsh/history"
+setopt SHARE_HISTORY
 
 # default libvirt uri path
 export LIBVIRT_DEFAULT_URI='qemu:///system'
