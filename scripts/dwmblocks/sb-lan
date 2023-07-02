@@ -1,0 +1,15 @@
+#!/bin/sh
+
+INTERFACE=$(route | grep '^default' | awk '{print $8}')   
+
+DATA=$(ifstat -a | grep "$INTERFACE" | awk '{print $7,$9}')
+
+DOWN=$(echo $DATA | awk '{print $1}')
+UP=$(echo $DATA | awk '{print $2}')
+
+echo "󰈀 TX - $DOWN, RX - $UP"
+
+
+#case $BUTTON in
+#    1) st -e nmtui ;;
+#esac
