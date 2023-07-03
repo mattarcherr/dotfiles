@@ -1,0 +1,11 @@
+#!/bin/sh
+
+choices="SCREEN\nSECTION\nBLUR-SECTION"
+
+chosen=$(echo ${choices} | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l "20" -p "󰹑 ")
+
+case "$chosen" in
+        SCREEN) scrot ~/Pictures/screenshots/full-%Y-%m-%d@%H:%M.png ;;
+        SECTION) scrot -s ~/Pictures/screenshots/window-%Y-%m-%d@%H:%M.png ;;
+        BLUR-SECTION) scrot -sblur ~/Pictures/screenshots/window-%Y-%m-%d@%H:%M.png 
+esac
