@@ -84,6 +84,24 @@ require("lualine").setup {
   },
 }
 
+-- dashboard setup
+require('dashboard').setup {
+    theme = 'doom',
+    config = {
+      center = {
+      {
+        icon = '',
+        icon_hl = 'group',
+        desc = 'description',
+        desc_hl = 'group',
+        key = 'shortcut key in dashboard buffer not keymap !!',
+        key_hl = 'group',
+        action = '',
+      },
+    },
+  footer = {},
+  }
+}
 
 -- **************** Bindings ***************
 local keymap = vim.api.nvim_set_keymap
@@ -117,6 +135,9 @@ require('packer').startup(function()
 -- colour scheme
   use 'AlexvZyl/nordic.nvim'
 
+-- dashboard (startup page)
+  use 'glepnir/dashboard-nvim'
+
 -- NVIM Project
   use 'ahmedkhalf/project.nvim'
 
@@ -138,12 +159,5 @@ require('packer').startup(function()
 
 -- haskell
 use {'neovimhaskell/haskell-vim'}
--- use {
---   'mrcjkb/haskell-tools.nvim',
---   requires = {
---     'neovim/nvim-lspconfig',
---     'nvim-lua/plenary.nvim',
---   },
--- }
 
 end)
