@@ -29,6 +29,9 @@ require("nvim-tree").setup()
 -- tabline setup
 require("barbar").setup{}
 
+-- Commenting setup
+require ("Comment").setup()
+
 -- statusline setup
 
 local function folder_and_file()
@@ -115,6 +118,10 @@ keymap("n", "SV",       ":source ~/.config/nvim/init.lua<cr>", nrm) -- SV reload
 -- nvim tree binds
 keymap("n", "<S-Tab>",  ":NvimTreeFindFileToggle<cr>", 	nrm) -- Shift-tab toggle explorer
 
+-- commenting binds
+keymap("n", "<C-_>",    "gcc",                       {noremap = false})
+keymap("v", "<C-_>",    "gcc",                       {noremap = false})
+
 -- tab binds
 keymap("n", "<C-n>",    ":tabnew<cr>",                 	nrm) -- Crtl-n opens new tab
 
@@ -156,6 +163,9 @@ require('packer').startup(function()
 -- nvim telescope
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', 
   requires = {'nvim-lua/plenary.nvim', 'nvim-treesitter/nvim-treesitter', 'sharkdp/fd' } }
+
+-- Commenting
+use {'numToStr/Comment.nvim'}
 
 -- haskell
 use {'neovimhaskell/haskell-vim'}
