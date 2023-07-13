@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 files=( "/home/matt/Pictures/wallpaper"/* )
 
@@ -6,7 +6,7 @@ choices="RANDOM\nBROWSE\n"
 
 for i in "${files[@]}"
 do
-   : 
+   :
    tmp=$(echo ${i:30}) # cuts off first 30 characters from each file path
    choices+="$tmp\n" # then add new line to each element for the dmenu interface 
 done
