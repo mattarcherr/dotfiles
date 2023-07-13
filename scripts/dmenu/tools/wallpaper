@@ -1,27 +1,26 @@
 #!/bin/sh
 
-files=( "/home/matt/Pictures/wallpaper"/* )
+files=$( ls -p /home/matt/Pictures/wallpaper/ | grep -v /)
 
-choices="RANDOM\nBROWSE\n"
+choices="RANDOM\nBROWSE"
 
-for i in "${files[@]}"
+# read files into string
+echo "$files" | tr ' ' '\n' | (while read i
 do
-   :
-   tmp=$(echo ${i:30}) # cuts off first 30 characters from each file path
-   choices+="$tmp\n" # then add new line to each element for the dmenu interface 
+    choices="$choices""\n"
+    choices="$choices""$i"
 done
 
-chosen=$(echo -e "${choices[@]::-2}" | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l "20" -p "󰸉 ")
+chosen=$(echo ${choices} | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l "20" -p "󰸉 ")
 
 case "$chosen" in
         RANDOM) # random wallpaper
-          ls /home/matt/Pictures/wallpaper/ | sort -R | tail -1 | while read file; do
-                  st -e xwallpaper --zoom /home/matt/Pictures/wallpaper/$file
-          done 
-          ;;
+          file=$(ls -p /home/matt/Pictures/wallpaper/ | grep -v / | shuf -n 1);
+          xwallpaper --zoom /home/matt/Pictures/wallpaper/$file ;;
         BROWSE) # browse wallpapers in sxiv
           sxiv -t /home/matt/Pictures/wallpaper/* ;;
-        *) # if a specific wallpaper is chosen
-          st -e xwallpaper --zoom /home/matt/Pictures/wallpaper/$chosen 
-          ;;
+        *)      # if a specific wallpaper is chosen
+          xwallpaper --zoom /home/matt/Pictures/wallpaper/$chosen ;;
 esac
+
+)
