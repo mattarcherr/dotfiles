@@ -1,6 +1,6 @@
 #!/bin/sh
 
-files=$( ls -p /home/matt/Pictures/wallpaper/ | grep -v /)
+files=$( ls -p ~/Pictures/wallpaper/ | grep -v /)
 
 choices="RANDOM\nBROWSE"
 
@@ -15,12 +15,12 @@ chosen=$(echo ${choices} | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l "20" -
 
 case "$chosen" in
         RANDOM) # random wallpaper
-          file=$(ls -p /home/matt/Pictures/wallpaper/ | grep -v / | shuf -n 1);
-          xwallpaper --zoom /home/matt/Pictures/wallpaper/$file ;;
+          file=$(ls -p ~/Pictures/wallpaper/ | grep -v / | shuf -n 1);
+          xwallpaper --zoom ~/Pictures/wallpaper/$file ;;
         BROWSE) # browse wallpapers in sxiv
-          sxiv -t /home/matt/Pictures/wallpaper/* ;;
+          sxiv -t ~/Pictures/wallpaper/* ;;
         *)      # if a specific wallpaper is chosen
-          xwallpaper --zoom /home/matt/Pictures/wallpaper/$chosen ;;
+          xwallpaper --zoom ~/Pictures/wallpaper/$chosen ;;
 esac
 
 )
