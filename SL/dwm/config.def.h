@@ -203,14 +203,15 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("~/scripts/dmenu/shutdown") }, // quit menu
 	{ MODKEY,             		XK_t,      spawn,          SHCMD("~/scripts/dmenu/tools/tools.sh") },    // tools menu
          
-	{ MODKEY,             		XK_f,      spawn,          SHCMD("firefox") },    // tools menu
-	{ MODKEY,             		XK_r,      spawn,          SHCMD("st -e zsh -ci 'lfcd; zsh'") },    // tools menu
+	{ MODKEY,             		XK_f,      spawn,          SHCMD("firefox") },    // firefox shortcut 
+	{ MODKEY,             		XK_v,      spawn,          SHCMD("vscodium") },    // vscodium shortcut
+	{ MODKEY,             		XK_r,      spawn,          SHCMD("st -e zsh -ci 'lfcd; zsh'") },    // lf shortcut
 
-        { 0,       XF86XK_AudioLowerVolume,   spawn,          SHCMD("amixer -q sset Master 5%-") },
-        { 0,       XF86XK_AudioRaiseVolume,   spawn,          SHCMD("amixer -q sset Master 5%+") },
-        { 0,       XF86XK_AudioMute,          spawn,          SHCMD("amixer set Master toggle") },
-        { 0,       XF86XK_KbdBrightnessDown,  spawn,          SHCMD("xbacklight -dec 5") },
-        { 0,       XF86XK_KbdBrightnessUp,    spawn,          SHCMD("xbacklight -inc 5") },
+        { 0,       XF86XK_AudioLowerVolume,        spawn,          SHCMD("amixer -q sset Master 5%-") },
+        { 0,       XF86XK_AudioRaiseVolume,        spawn,          SHCMD("amixer -q sset Master 5%+") },
+        { 0,       XF86XK_AudioMute,               spawn,          SHCMD("amixer set Master toggle") },
+        { 0,       XF86XK_KbdBrightnessDown,       spawn,          SHCMD("xbacklight -dec 5") },
+        { 0,       XF86XK_KbdBrightnessUp,         spawn,          SHCMD("xbacklight -inc 5") },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
