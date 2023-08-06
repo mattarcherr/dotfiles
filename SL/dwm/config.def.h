@@ -3,7 +3,7 @@
 /* ******************** Configurations ******************** */
 /* Appearance */
 static const char buttonbar[]       = " |";
-static unsigned int borderpx        = 1;        /* border pixel of windows */
+static unsigned int borderpx        = 2;        /* border pixel of windows */
 static unsigned int snap            = 32;       /* snap pixel */
 static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
@@ -28,7 +28,7 @@ static char normbordercolor[]       = "#9EA6AC"; /* window border colours */
 /* selected colours */
 static char selbgcolor[]            = "#242724";
 static char selfgcolor[]            = "#9EA6AC";
-static char selbordercolor[]        = "#444444";
+static char selbordercolor[]        = "#880808";
 
 static const char *colors[][3] = {
   /*                       fg           bg           border      */
