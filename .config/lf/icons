@@ -267,7 +267,7 @@ Vagrantfile             
 *.tz    
 *.deb   
 *.rpm   
-*.jar   
+*.jar   
 *.war   
 *.ear   
 *.sar   
