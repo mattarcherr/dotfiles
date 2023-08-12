@@ -7,6 +7,9 @@ export TERMINAL="st"
 # remove less history file
 export LESSHISTFILE="-"
 
+# npm
+export NPM_CONFIG_USERCONFIG=$HOME/.config/npm/npmrc
+
 # change .gnupg dir
 export GNUPGHOME=$HOME/.config
 
