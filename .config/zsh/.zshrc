@@ -8,11 +8,8 @@ PROMPT='[%F{blue}%n@%m%f %B%~%b]$ '
 # terminal history
 HISTSIZE=99999999
 SAVEHIST=99999999
-HISTFILE="${XDG_CASHE_HOME:-$HOME/.cache}/zsh/history"
+HISTFILE="${XDG_CASHE_HOME:-$HOME/.cache}/zsh/zsh_history"
 setopt SHARE_HISTORY
-
-# default libvirt uri path
-export LIBVIRT_DEFAULT_URI='qemu:///system'
 
 # ----- options -----
 autoload -U compinit
@@ -21,13 +18,8 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
 
-
-# vim keys in menu
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '?' backward-delete-char
+# keep default keybinds
+bindkey -e
 
 #aliases
 alias vim="nvim"
