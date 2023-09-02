@@ -160,9 +160,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
-        { MODKEY|ShiftMask,             XK_h,      setcfact,       {.f = +0.25} },
-        { MODKEY|ShiftMask,             XK_l,      setcfact,       {.f = -0.25} },
-        { MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
+    { MODKEY|ShiftMask,             XK_h,      setcfact,       {.f = +0.25} },
+    { MODKEY|ShiftMask,             XK_l,      setcfact,       {.f = -0.25} },
+    { MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 
         // ############ GAPS ############
@@ -208,11 +208,11 @@ static const Key keys[] = {
 	{ MODKEY,             		XK_r,      spawn,          SHCMD("st -e zsh -ci 'lfcd; zsh'") },    // lf shortcut
 	{ MODKEY,             		XK_n,      spawn,          SHCMD("st -e zsh -ci 'nvim; zsh'") },    // nvim shortcut
 
-        { 0,       XF86XK_AudioLowerVolume,        spawn,          SHCMD("amixer -q sset Master 5%-") },
-        { 0,       XF86XK_AudioRaiseVolume,        spawn,          SHCMD("amixer -q sset Master 5%+") },
-        { 0,       XF86XK_AudioMute,               spawn,          SHCMD("amixer set Master toggle") },
-        { 0,       XF86XK_KbdBrightnessDown,       spawn,          SHCMD("xbacklight -dec 5") },
-        { 0,       XF86XK_KbdBrightnessUp,         spawn,          SHCMD("xbacklight -inc 5") },
+    { 0,       XF86XK_AudioLowerVolume,        spawn,          SHCMD("amixer -q sset Master 5%-") },
+    { 0,       XF86XK_AudioRaiseVolume,        spawn,          SHCMD("amixer -q sset Master 5%+") },
+    { 0,       XF86XK_AudioMute,               spawn,          SHCMD("amixer set Master toggle") },
+    { 0,       XF86XK_KbdBrightnessDown,       spawn,          SHCMD("xbacklight -dec 5") },
+    { 0,       XF86XK_KbdBrightnessUp,         spawn,          SHCMD("xbacklight -inc 5") },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
@@ -229,7 +229,7 @@ static const Key keys[] = {
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
-	{ ClkButton,		0,		Button1,	spawn,		{.v = dmenucmd } },
+	{ ClkButton,		    0,		        Button1,	    spawn,		    {.v = dmenucmd } },
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
