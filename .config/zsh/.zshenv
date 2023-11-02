@@ -11,7 +11,10 @@ export LESSHISTFILE="-"
 export NPM_CONFIG_USERCONFIG=$HOME/.config/npm/npmrc
 
 # change .gnupg dir
-export GNUPGHOME=$HOME/.config
+export GNUPGHOME=$HOME/.config/.gnupg
+
+# pass dir
+export PASSWORD_STORE_DIR=$HOME/.config/.password-store
 
 # default libvirt uri path
 export LIBVIRT_DEFAULT_URI='qemu:///system'
