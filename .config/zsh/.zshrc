@@ -31,8 +31,6 @@ alias spyder="conda run spyder"
 alias gc="git clone --recursive"
 alias shut="sudo shutdown now"
 alias xbl="xbacklight"
-alias odm="onedrive --monitor"
-alias ods="onedrive --synchronize"
 alias hss="hugo server --noHTTPCache --disableFastRender --bind 192.168.6.220 --baseURL http://192.168.6.220 --port 1313"
 
 # ------ commands -------
