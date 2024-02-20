@@ -1,4 +1,5 @@
 export ZDOTDIR=$HOME/.config/zsh
+export ZSH_COMPDUMP=$HOME/.cashe/zsh/.zcompdump-$HOST
 
 export BROWSER="firefox"
 export EDITOR="nvim"
