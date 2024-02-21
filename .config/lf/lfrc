@@ -57,6 +57,10 @@ map gd cd ~/Downloads
 map gs cd ~/.config/suckless
 map gc cd ~/Documents/dotfiles
 
+# Directory size
+set info size
+map zc :calcdirsize
+
 # execute current file (must be executable)
 map x $$f
 map X !$f
