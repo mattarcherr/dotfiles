@@ -7,6 +7,10 @@ export TERMINAL="st"
 # remove less history file
 export LESSHISTFILE="-"
 
+# rust
+export CARGO_HOME=$HOME/.config/.cargo
+export RUSTUP_HOME=$HOME/.config/.rustup
+
 # npm
 export NPM_CONFIG_USERCONFIG=$HOME/.config/npm/npmrc
 
