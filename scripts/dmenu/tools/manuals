@@ -1,3 +1,5 @@
 #!/bin/sh
-
-man -k . | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l 12 -p " " | awk '{print $1}' | xargs -r man -Tpdf | zathura -
+cmd=$(man -k . | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l 12 -p " " | awk '{print $1}')
+if [ -n "$cmd" ]; then
+    echo $cmd | xargs -r man -Tpdf | zathura - 
+fi

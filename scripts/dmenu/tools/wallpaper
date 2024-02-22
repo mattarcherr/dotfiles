@@ -11,7 +11,7 @@ do
     choices="$choices""$i"
 done
 
-chosen=$(echo ${choices} | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l "20" -p "󰸉 ")
+chosen=$(printf ${choices} | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l "20" -p "󰸉 ")
 
 case "$chosen" in
         RANDOM) # random wallpaper

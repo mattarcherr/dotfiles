@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
 choices="Wallpaper\nScreenshot\nShortcuts\nManuals\nPasswords"
 
-chosen=$(echo -e "$choices" | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l 20 -p " ")
+chosen=$(printf "$choices" | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l 20 -p " ")
 
 case "$chosen" in
         Screenshot) ~/scripts/dmenu/tools/screenshot ;;
