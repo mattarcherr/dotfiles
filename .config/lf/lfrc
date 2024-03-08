@@ -56,6 +56,7 @@ map gh cd ~
 map gd cd ~/Downloads
 map gs cd ~/.config/suckless
 map gc cd ~/Documents/dotfiles
+map gm cd /media
 
 # Directory size
 set info size
