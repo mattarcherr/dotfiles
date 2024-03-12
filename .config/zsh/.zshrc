@@ -27,7 +27,7 @@ alias p="sudo pacman"
 alias SS="sudo systemctl"
 alias ls="ls -ogh --color"
 alias r="lfcd"
-alias lf="kfcd"
+alias lf="lfcd"
 ## git
 alias gcl="git clone --recursive"
 alias gs="git status"
