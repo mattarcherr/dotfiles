@@ -23,6 +23,7 @@ bindkey -e
 
 #aliases
 alias vim="nvim"
+alias v="nvim"
 alias p="sudo pacman"
 alias SS="sudo systemctl"
 alias ls="ls -ogh --color"
