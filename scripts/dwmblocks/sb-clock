@@ -3,7 +3,7 @@
 dte="$(date +"%a %d/%m - %H:%M")"
 echo "$dte"
 
-case $BUTTON in
+case $BLOCK_BUTTON in
 	1) notify-send "$(cal)" ;;
-  6) st -e nvim "$0" ;;
+    2) st -e nvim "$0" ;;
 esac

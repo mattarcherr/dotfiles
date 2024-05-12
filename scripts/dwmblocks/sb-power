@@ -1,6 +1,7 @@
 #!/bin/bash
 echo " "
 
-case $BUTTON in
-        1) ~/scripts/dmenu/shutdown
+case $BLOCK_BUTTON in
+        1) ~/scripts/dmenu/shutdown ;;
+        2) st -e nvim "$0" ;;
 esac
