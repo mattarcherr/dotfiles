@@ -36,11 +36,6 @@ static const char *colors[][3] = {
   /*                       fg           bg           border      */
   [SchemeNorm]     = { normfgcolor, normbgcolor, normbordercolor },
   [SchemeSel]      = { selfgcolor,  selbgcolor,  selbordercolor  },
-  [SchemeStatus]   = { normfgcolor, normbgcolor, normbordercolor },
-  [SchemeTagsSel]  = { selfgcolor,  selbgcolor,  normbordercolor },
-  [SchemeTagsNorm] = { normfgcolor, normbgcolor, normbordercolor },
-  [SchemeInfoSel]  = { normfgcolor, normbgcolor, normbordercolor },
-  [SchemeInfoNorm] = { normfgcolor, normbgcolor, normbordercolor },
 };
 
 static const unsigned int baralpha = 0xd0;
@@ -49,11 +44,6 @@ static const unsigned int alphas[][3]      = {
   /*                     fg       bg        border   */
   [SchemeNorm]     = { OPAQUE, baralpha, borderalpha },
   [SchemeSel]      = { OPAQUE, baralpha, borderalpha },
-  [SchemeStatus]   = { OPAQUE, baralpha, borderalpha },
-  [SchemeTagsSel]  = { OPAQUE, baralpha, borderalpha },
-  [SchemeTagsNorm] = { OPAQUE, baralpha, borderalpha },
-  [SchemeInfoSel]  = { OPAQUE, baralpha, borderalpha },
-  [SchemeInfoNorm] = { OPAQUE, baralpha, borderalpha },
 };
 
 /* ******************** Tags/Workspaces ******************** */
@@ -118,31 +108,29 @@ static const Layout layouts[] = {
 #define STATUSBAR "dwmblocks"
 
 /* Xresources preferences to load at startup */
-ResourcePref resources[] = {
-  { "color4",             STRING,   &normbordercolor},
-  { "color14",            STRING,   &selbordercolor},
-  { "color0",             STRING,   &normbgcolor},
-  { "color12",            STRING,   &normfgcolor},
-  { "color7",             STRING,   &selfgcolor},
-  { "color0",             STRING,   &selbgcolor},
-  { "font",               STRING,   &font },
-  { "dmenufont",          STRING,   &dmenufont },
-  { "normbgcolor",        STRING,   &normbgcolor },
-  { "normbordercolor",    STRING,   &normbordercolor },
-  { "normfgcolor",        STRING,   &normfgcolor },
-  { "selbgcolor",         STRING,   &selbgcolor },
-  { "selbordercolor",     STRING,   &selbordercolor },
-  { "selfgcolor",         STRING,   &selfgcolor },
-  { "borderpx",           INTEGER,  &borderpx },
-  { "snap",               INTEGER,  &snap },
-  { "showbar",            INTEGER,  &showbar },
-  { "topbar",             INTEGER,  &topbar },
-  { "nmaster",            INTEGER,  &nmaster },
-  { "resizehints",        INTEGER,  &resizehints },
-  { "mfact",              FLOAT,    &mfact },
-};
+/* ResourcePref resources[] = {*/
+/*   { "color4",             STRING,   &normbordercolor},*/
+/*   { "color14",            STRING,   &selbordercolor},*/
+/*   { "color0",             STRING,   &normbgcolor},*/
+/*   { "color12",            STRING,   &normfgcolor},*/
+/*   { "color7",             STRING,   &selfgcolor},*/
+/*   { "color0",             STRING,   &selbgcolor},*/
+/*   { "font",               STRING,   &font },*/
+/*   { "dmenufont",          STRING,   &dmenufont },*/
+/*   { "normbgcolor",        STRING,   &normbgcolor },*/
+/*   { "normbordercolor",    STRING,   &normbordercolor },*/
+/*   { "normfgcolor",        STRING,   &normfgcolor },*/
+/*   { "selbgcolor",         STRING,   &selbgcolor },*/
+/*   { "selbordercolor",     STRING,   &selbordercolor },*/
+/*   { "selfgcolor",         STRING,   &selfgcolor },*/
+/*   { "borderpx",           INTEGER,  &borderpx },*/
+/*   { "snap",               INTEGER,  &snap },*/
+/*   { "showbar",            INTEGER,  &showbar },*/
+/*   { "topbar",             INTEGER,  &topbar },*/
+/*   { "nmaster",            INTEGER,  &nmaster },*/
+/*   { "resizehints",        INTEGER,  &resizehints },*/
+/* };*/
 
-#include "exitdwm.c"
 #include "movestack.c"
 
 /* ******************** Commands ******************** */
@@ -159,13 +147,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
-    { MODKEY|ShiftMask,             XK_h,      setcfact,       {.f = +0.25} },
-    { MODKEY|ShiftMask,             XK_l,      setcfact,       {.f = -0.25} },
-    { MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 
         // ############ GAPS ############
@@ -211,12 +194,6 @@ static const Key keys[] = {
 	{ MODKEY,             		XK_v,      spawn,          SHCMD("vscodium") },    // vscodium shortcut
 	{ MODKEY,             		XK_r,      spawn,          SHCMD("st -e zsh -ci 'lfcd; zsh'") },    // lf shortcut
 	{ MODKEY,             		XK_n,      spawn,          SHCMD("st -e zsh -ci 'nvim; zsh'") },    // nvim shortcut
-
-    { 0,   XF86XK_AudioLowerVolume,        spawn,          SHCMD("amixer -q sset Master 5%-") },
-    { 0,   XF86XK_AudioRaiseVolume,        spawn,          SHCMD("amixer -q sset Master 5%+") },
-    { 0,   XF86XK_AudioMute,               spawn,          SHCMD("amixer set Master toggle") },
-    { 0,   XF86XK_KbdBrightnessDown,       spawn,          SHCMD("xbacklight -dec 5") },
-    { 0,   XF86XK_KbdBrightnessUp,         spawn,          SHCMD("xbacklight -inc 5") },
 
 	TAGKEYS(                               XK_1,           0)
 	TAGKEYS(                               XK_2,           1)
