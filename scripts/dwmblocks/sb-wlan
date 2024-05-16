@@ -7,6 +7,7 @@ if ping -c 1 "9.9.9.9" > /dev/null; then
 fi
 
 
-case $BUTTON in
+case $BLOCK_BUTTON in
     1) st -e nmtui ;;
+    2) st -e nvim "$0" ;;
 esac

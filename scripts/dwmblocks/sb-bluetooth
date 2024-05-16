@@ -22,6 +22,6 @@ case $connected in
         *) echo "󰂱  $connected_device" ;;
 esac
 
-case $BUTTON in
+case $BLOCK_BUTTON in
         1) blueman-manager ;;
 esac

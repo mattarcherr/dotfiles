@@ -15,7 +15,6 @@ static int topbar                   = 1;        /* 0 means bottom bar */
 static const int vertpad            = 5;        /* vertical padding of bar */
 static const int sidepad            = 10;       /* horizontal padding of bar */
 
-
 /* Fonts */
 static char font[]                  = "JetBrainsMono Nerd Font:style:regular:size=12:antialias=true:autohint=true";
 static char dmenufont[]             = "JetBrainsMono Nerd Font:style:regular:size=12:antialias=true:autohint=true";
@@ -106,30 +105,6 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 #define STATUSBAR "dwmblocks"
-
-/* Xresources preferences to load at startup */
-/* ResourcePref resources[] = {*/
-/*   { "color4",             STRING,   &normbordercolor},*/
-/*   { "color14",            STRING,   &selbordercolor},*/
-/*   { "color0",             STRING,   &normbgcolor},*/
-/*   { "color12",            STRING,   &normfgcolor},*/
-/*   { "color7",             STRING,   &selfgcolor},*/
-/*   { "color0",             STRING,   &selbgcolor},*/
-/*   { "font",               STRING,   &font },*/
-/*   { "dmenufont",          STRING,   &dmenufont },*/
-/*   { "normbgcolor",        STRING,   &normbgcolor },*/
-/*   { "normbordercolor",    STRING,   &normbordercolor },*/
-/*   { "normfgcolor",        STRING,   &normfgcolor },*/
-/*   { "selbgcolor",         STRING,   &selbgcolor },*/
-/*   { "selbordercolor",     STRING,   &selbordercolor },*/
-/*   { "selfgcolor",         STRING,   &selfgcolor },*/
-/*   { "borderpx",           INTEGER,  &borderpx },*/
-/*   { "snap",               INTEGER,  &snap },*/
-/*   { "showbar",            INTEGER,  &showbar },*/
-/*   { "topbar",             INTEGER,  &topbar },*/
-/*   { "nmaster",            INTEGER,  &nmaster },*/
-/*   { "resizehints",        INTEGER,  &resizehints },*/
-/* };*/
 
 #include "movestack.c"
 

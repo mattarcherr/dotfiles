@@ -18,6 +18,7 @@ case $volume in
         0) echo "󰝟";;
 esac
 
-case $BUTTON in
+case $BLOCK_BUTTON in
     1) st -e alsamixer ;;
+    2) st -e nvim "$0" ;;
 esac

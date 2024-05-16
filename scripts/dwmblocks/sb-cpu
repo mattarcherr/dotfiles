@@ -8,8 +8,8 @@ cpu=`top -bn1 |
 echo -e " $cpu%"
 
 
-case $BUTTON in
+case $BLOCK_BUTTON in
 	  1) st -e htop ;;
     3) notify-send "CPU usage" "$(ps axch -o cmd,%cpu --sort=-%cpu | head)" ;;
-	  6) st -e nvim "$0" ;;
+	  2) st -e nvim "$0" ;;
 esac
