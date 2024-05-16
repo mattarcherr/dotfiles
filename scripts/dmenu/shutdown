@@ -7,5 +7,5 @@ chosen=$(printf "$choices" | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l "20"
 case "$chosen" in
         Shutdown) sudo shutdown now ;;
         Reboot) sudo reboot ;;
-        "Sign Out") pkill -KILL -u $USER;;
+        "Sign Out") kill -TERM $(pidof dwm);;
 esac
