@@ -65,7 +65,7 @@ static const Rule rules[] = {
 };
 
 /* ******************** Layouts  ******************** */
-static float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
 static int nmaster     = 1;    /* number of clients in master area */
 static int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int attachbelow = 1;    /* 1 means attach after the currently active window */
@@ -122,6 +122,11 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+    { MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY|ShiftMask,             XK_h,      setcfact,       {.f = +0.25} },
+	{ MODKEY|ShiftMask,             XK_l,      setcfact,       {.f = -0.25} },
+	{ MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
@@ -156,17 +161,17 @@ static const Key keys[] = {
 
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	// { MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	// { MODKEY,                       XK_period, focusmon,       {.i = +1 } },
+	{ MODKEY|ControlMask,           XK_comma,  focusmon,       {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY,                       XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY,                       XK_period, tagmon,         {.i = +1 } },
 
         // ############ COMMANDS ############
-	{ MODKEY|ShiftMask,         XK_q,      spawn,          SHCMD("~/scripts/dmenu/shutdown") }, // quit menu
-	{ MODKEY,             		XK_t,      spawn,          SHCMD("~/scripts/dmenu/tools/tools.sh") },    // tools menu
+	{ MODKEY|ShiftMask,         XK_q,      spawn,          SHCMD("~/scripts/dmenu/shutdown") },         // quit menu
+	{ MODKEY,             		XK_t,      spawn,          SHCMD("~/scripts/dmenu/tools/tools.sh") },   // tools menu
          
-	{ MODKEY,             		XK_f,      spawn,          SHCMD("firefox") },    // firefox shortcut 
-	{ MODKEY,             		XK_v,      spawn,          SHCMD("vscodium") },    // vscodium shortcut
+	{ MODKEY,             		XK_f,      spawn,          SHCMD("firefox") },  // firefox shortcut 
+	{ MODKEY,             		XK_v,      spawn,          SHCMD("code") },     // vscode shortcut
 	{ MODKEY,             		XK_r,      spawn,          SHCMD("st -e zsh -ci 'lfcd; zsh'") },    // lf shortcut
 	{ MODKEY,             		XK_n,      spawn,          SHCMD("st -e zsh -ci 'nvim; zsh'") },    // nvim shortcut
 
