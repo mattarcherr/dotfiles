@@ -167,7 +167,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, tagmon,         {.i = +1 } },
 
         // ############ COMMANDS ############
-	{ MODKEY|ShiftMask,         XK_q,      spawn,          SHCMD("~/scripts/dmenu/shutdown") },         // quit menu
+	{ MODKEY|ShiftMask,         XK_q,      spawn,          SHCMD("xtray") },                            // quit menu
 	{ MODKEY,             		XK_t,      spawn,          SHCMD("~/scripts/dmenu/tools/tools.sh") },   // tools menu
          
 	{ MODKEY,             		XK_f,      spawn,          SHCMD("firefox") },  // firefox shortcut 
