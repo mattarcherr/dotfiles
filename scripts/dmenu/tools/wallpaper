@@ -16,7 +16,8 @@ chosen=$(printf ${choices} | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l "20"
 case "$chosen" in
         RANDOM) # random wallpaper
           file=$(ls -p ~/Pictures/wallpaper/ | grep -v / | shuf -n 1);
-          xwallpaper --zoom ~/Pictures/wallpaper/$file ;;
+          # xprop command forces a dwm refresh
+          xwallpaper --zoom ~/Pictures/wallpaper/$file && xprop -root -remove _NET_ACTIVE_WINDOW ;;
         BROWSE) # browse wallpapers in sxiv
           sxiv -t ~/Pictures/wallpaper/* ;;
         *)      # if a specific wallpaper is chosen
