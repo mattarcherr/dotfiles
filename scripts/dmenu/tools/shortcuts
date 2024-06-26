@@ -5,7 +5,8 @@ choices="Terminal                 (super+shift+enter)
 lf                                 (super+r)
 Firefox                            (super+f)
 vs-code                            (super+v)
-neovim                             (super+n)\n"
+neovim                             (super+n)
+obsidian                           (super+o)\n"
 
 chosen=$(echo -e "${choices[@]::-2}" | dmenu -fn "JetBrainsMono Nerd Font:size=12" -l "20" -p " ")
 
@@ -15,6 +16,7 @@ case "$chosen" in
         Terminal) st ;;
         lf) st -e zsh -ic "lfcd; zsh" ;;
         Firefox) firefox ;;
-        vs-code) vscodium ;;
-        neovim) st -e zsh -ic "nvim; zsh" 
+        vs-code) code ;;
+        neovim) st -e zsh -ic "nvim; zsh" ;;
+        obsidian) obsidian
 esac

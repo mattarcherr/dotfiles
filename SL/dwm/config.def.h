@@ -76,7 +76,7 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]",      tile },    /* first entry is default */
+	{ "[]",       tile },    /* first entry is default */
 	{ "[M]",      monocle },
 	{ "[@]",      spiral },
 	{ "[\\]",     dwindle },
@@ -172,6 +172,7 @@ static const Key keys[] = {
          
 	{ MODKEY,             		XK_f,      spawn,          SHCMD("firefox") },  // firefox shortcut 
 	{ MODKEY,             		XK_v,      spawn,          SHCMD("code") },     // vscode shortcut
+	{ MODKEY,             		XK_o,      spawn,          SHCMD("obsidian") },     // obsidian shortcut
 	{ MODKEY,             		XK_r,      spawn,          SHCMD("st -e zsh -ci 'lfcd; zsh'") },    // lf shortcut
 	{ MODKEY,             		XK_n,      spawn,          SHCMD("st -e zsh -ci 'nvim; zsh'") },    // nvim shortcut
 

@@ -2,6 +2,6 @@
 echo " "
 
 case $BLOCK_BUTTON in
-        1) ~/scripts/dmenu/shutdown ;;
+        1) xtray ;;
         2) st -e nvim "$0" ;;
 esac
