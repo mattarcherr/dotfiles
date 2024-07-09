@@ -20,9 +20,20 @@
 #define CLICKABLE_BLOCKS 1
 
 // Define blocks for the status feed as X(icon, cmd, interval, signal).
-#define BLOCKS(X)             \
+// DESKTOP CONFIGURATION
+/* #define BLOCKS(X)             \
     X("", "~/scripts/dwmblocks/sb-lan",   5,  1) \
     X("", "~/scripts/dwmblocks/sb-clock", 60, 2) \
-    X("", "~/scripts/dwmblocks/sb-power", 0,  3)
+    X("", "~/scripts/dwmblocks/sb-power", 1,  3) */
+
+// LAPTOP CONFIGURATION
+#define BLOCKS(X)             \
+    X("", "~/scripts/dwmblocks/sb-volume",    5,  1) \
+    X("", "~/scripts/dwmblocks/sb-battery",   60, 2) \
+    X("", "~/scripts/dwmblocks/sb-backlight", 5,  3) \
+    X("", "~/scripts/dwmblocks/sb-bluetooth", 60, 4) \
+    X("", "~/scripts/dwmblocks/sb-wlan",      5,  5) \
+    X("", "~/scripts/dwmblocks/sb-clock",     12, 6) \
+    X("", "~/scripts/dwmblocks/sb-power",     1,  7)
 
 #endif  // CONFIG_H
