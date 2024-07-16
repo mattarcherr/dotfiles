@@ -19,7 +19,7 @@ case "$chosen" in
           # xprop command forces a dwm refresh
           xwallpaper --zoom ~/Pictures/wallpaper/$file && xprop -root -remove _NET_ACTIVE_WINDOW ;;
         BROWSE) # browse wallpapers in sxiv
-          sxiv -t ~/Pictures/wallpaper/* ;;
+            xwallpaper --zoom $(sxiv -ot ~/Pictures/wallpaper/* | head -n 1);;
         *)      # if a specific wallpaper is chosen
           xwallpaper --zoom ~/Pictures/wallpaper/$chosen ;;
 esac
