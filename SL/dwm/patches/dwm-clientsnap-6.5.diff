@@ -1,0 +1,42 @@
+From a4c496fa75f9ce2a9af2a32cfa5b3e21274934c8 Mon Sep 17 00:00:00 2001
+From: matt <matthewarcherr@gmail.com>
+Date: Sun, 21 Jul 2024 17:18:43 +0100
+Subject: [PATCH] Floating clients can now snap onto each other
+
+---
+ dwm.c | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+
+diff --git a/dwm.c b/dwm.c
+index 67c6b2b..76f7ff5 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -1186,6 +1186,25 @@ movemouse(const Arg *arg)
+ 				ny = selmon->wy;
+ 			else if (abs((selmon->wy + selmon->wh) - (ny + HEIGHT(c))) < snap)
+ 				ny = selmon->wy + selmon->wh - HEIGHT(c);
++
++			for(Client* current = c->mon->stack; current; current = current->snext) {	
++				if (current != c) {
++					if (abs(current->x - (nx + c->w)) < snap &&
++						(current->y < ny + c->h && current->y + current->h > ny)) {
++						nx = (current->x - c->w) - (borderpx * 2);  }
++					else if (abs((current->x + current->w) - nx) < snap &&
++						(current->y < ny + c->h && current->y + current->h > ny)) {
++						nx = (current->x + current->w) + (borderpx * 2); }
++
++					if (abs(current->y - (ny + c->h)) < snap &&
++						(current->x < nx + c->w && current->x + current->w > nx)) {
++						ny = (current->y - c->h) - (borderpx * 2);  }
++					else if (abs((current->y + current->h) - ny) < snap &&
++						(current->x < nx + c->w && current->x + current->w > nx)) {
++						ny = (current->y + current->h) + (borderpx * 2); }
++				}
++			}
++			
+ 			if (!c->isfloating && selmon->lt[selmon->sellt]->arrange
+ 			&& (abs(nx - c->x) > snap || abs(ny - c->y) > snap))
+ 				togglefloating(NULL);
+-- 
+2.45.2
+

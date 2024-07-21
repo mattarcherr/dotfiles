@@ -1348,6 +1348,25 @@ movemouse(const Arg *arg)
 				ny = selmon->wy;
 			else if (abs((selmon->wy + selmon->wh) - (ny + HEIGHT(c))) < snap)
 				ny = selmon->wy + selmon->wh - HEIGHT(c);
+
+			for(Client* current = c->mon->stack; current; current = current->snext) {	
+				if (current != c) {
+					if (abs(current->x - (nx + c->w)) < snap &&
+						(current->y < ny + c->h && current->y + current->h > ny)) {
+						nx = (current->x - c->w) - (borderpx * 2);  }
+					else if (abs((current->x + current->w) - nx) < snap &&
+						(current->y < ny + c->h && current->y + current->h > ny)) {
+						nx = (current->x + current->w) + (borderpx * 2); }
+
+					if (abs(current->y - (ny + c->h)) < snap &&
+						(current->x < nx + c->w && current->x + current->w > nx)) {
+						ny = (current->y - c->h) - (borderpx * 2);  }
+					else if (abs((current->y + current->h) - ny) < snap &&
+						(current->x < nx + c->w && current->x + current->w > nx)) {
+						ny = (current->y + current->h) + (borderpx * 2); }
+				}
+			}
+			
 			if (!c->isfloating && selmon->lt[selmon->sellt]->arrange
 			&& (abs(nx - c->x) > snap || abs(ny - c->y) > snap))
 				togglefloating(NULL);
