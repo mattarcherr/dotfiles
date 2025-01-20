@@ -1,0 +1,9 @@
+#!/bin/bash
+sudo pacman -Sy > /dev/null 2>&1
+packages=`sudo pacman -Qu | wc -l`
+echo -e "󱧕 $packages"
+
+case $BLOCK_BUTTON in
+    1) st -e sudo pacman -Syyu ;;
+    2) st -e nvim "$0" ;;
+esac

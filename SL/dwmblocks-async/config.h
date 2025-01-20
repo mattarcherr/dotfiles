@@ -21,19 +21,20 @@
 
 // Define blocks for the status feed as X(icon, cmd, interval, signal).
 // DESKTOP CONFIGURATION
-/* #define BLOCKS(X)             \
-    X("", "~/scripts/dwmblocks/sb-lan",   5,  1) \
-    X("", "~/scripts/dwmblocks/sb-clock", 60, 2) \
-    X("", "~/scripts/dwmblocks/sb-power", 1,  3) */
+#define BLOCKS(X)             \
+    X("", "~/scripts/dwmblocks/sb-packages",   600,  1) \
+    X("", "~/scripts/dwmblocks/sb-lan",        5,  2)  \
+    X("", "~/scripts/dwmblocks/sb-clock",      30, 3)  \
+    X("", "~/scripts/dwmblocks/sb-power",      1,  4) 
 
 // LAPTOP CONFIGURATION
-#define BLOCKS(X)             \
+/*#define BLOCKS(X)             \
     X("", "~/scripts/dwmblocks/sb-volume",    5,  1) \
     X("", "~/scripts/dwmblocks/sb-battery",   60, 2) \
     X("", "~/scripts/dwmblocks/sb-backlight", 5,  3) \
     X("", "~/scripts/dwmblocks/sb-bluetooth", 60, 4) \
     X("", "~/scripts/dwmblocks/sb-wlan",      5,  5) \
     X("", "~/scripts/dwmblocks/sb-clock",     12, 6) \
-    X("", "~/scripts/dwmblocks/sb-power",     1,  7)
+    X("", "~/scripts/dwmblocks/sb-power",     1,  7) */
 
 #endif  // CONFIG_H
