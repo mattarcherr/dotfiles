@@ -2,7 +2,7 @@
 
 
 choices="Terminal                 (super+shift+enter)
-lf                                 (super+r)
+Yazi                               (super+r)
 Firefox                            (super+f)
 vs-code                            (super+v)
 neovim                             (super+n)
@@ -14,7 +14,7 @@ chosen=${chosen%% *} # ignore keybind ( only take first word )
 
 case "$chosen" in
         Terminal) st ;;
-        lf) st -e zsh -ic "lfcd; zsh" ;;
+        Yazi) st -e zsh -ic "y; zsh" ;;
         Firefox) firefox ;;
         vs-code) code ;;
         neovim) st -e zsh -ic "nvim; zsh" ;;
