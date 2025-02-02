@@ -173,8 +173,8 @@ static const Key keys[] = {
          
 	{ MODKEY,             		XK_f,      spawn,          SHCMD("firefox") },  // firefox shortcut 
 	{ MODKEY,             		XK_v,      spawn,          SHCMD("code") },     // vscode shortcut
-	{ MODKEY,             		XK_o,      spawn,          SHCMD("obsidian") },     // obsidian shortcut
-	{ MODKEY,             		XK_r,      spawn,          SHCMD("st -e zsh -ci 'lfcd; zsh'") },    // lf shortcut
+	{ MODKEY,             		XK_o,      spawn,          SHCMD("obsidian") }, // obsidian shortcut
+	{ MODKEY,             		XK_r,      spawn,          SHCMD("st -e zsh -ci 'y; zsh'") },       // yazi shortcut
 	{ MODKEY,             		XK_n,      spawn,          SHCMD("st -e zsh -ci 'nvim; zsh'") },    // nvim shortcut
 
 	TAGKEYS(                               XK_1,           0)

@@ -9,7 +9,6 @@ static char *font = "JetBrainsMonoNerdFont:size=12";
 /* Spare Fonts */
 static char *font2[] = { "JetBrainsMonoNerdFontMono:size=12" };
 static int borderpx = 2;
-
 /*
  * What program is execed by st depends of these precedence rules:
  * 1: program passed with -e
