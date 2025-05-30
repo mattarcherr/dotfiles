@@ -26,6 +26,7 @@
 
 #define TRUECOLOR(r,g,b)	(1 << 24 | (r) << 16 | (g) << 8 | (b))
 #define IS_TRUECOL(x)		(1 << 24 & (x))
+#define HISTSIZE    2000
 
 enum glyph_attribute {
 	ATTR_NULL           = 0,
@@ -123,6 +124,9 @@ typedef struct {
 	int col;      /* nb col */
 	Line *line;   /* screen */
 	Line *alt;    /* alternate screen */
+    Line hist[HISTSIZE]; /* history buffer */
+    int histi;    /* history index */
+    int scr;      /* scroll back */
 	int *dirty;   /* dirtyness of lines */
 	TCursor c;    /* cursor */
 	int ocx;      /* old cursor col */
@@ -244,6 +248,8 @@ void draw(void);
 void drawregion(int, int, int, int);
 void tfulldirt(void);
 
+void kscrolldown(const Arg *);
+void kscrollup(const Arg *);
 void printscreen(const Arg *);
 void printsel(const Arg *);
 void sendbreak(const Arg *);
